@@ -1,16 +1,17 @@
 
-// Import the Express module
-var express = require('express');
+// Import the http module
+const http = require('http');
 
-// Create an instance of the Express application
-var app = express();
+// Create a server object
+const server = http.createServer((req, res) => {
+  // Set the response header
+  res.setHeader('Content-Type', 'text/plain');
 
-// Define routes and middleware
-// ...
-
-// Start the server to listen for incoming requests
-app.listen(3000, function() {
-    console.log('Server is running on port 3000');
+  // Send a response
+  res.end('Hello, world!');
 });
-var app = express();
 
+// Start the server
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
+});
